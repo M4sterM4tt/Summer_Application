@@ -297,6 +297,7 @@ label.insert-name{
 input.insert-name{
 	font-family: 'Open Sans', sans-serif;
 	width: 80%;
+	color: white;
 	padding: 0%;
 	margin:  25px 0% 0% 0%;
 	font-size: 16px;
@@ -317,6 +318,7 @@ label.insert-description{
 input.insert-description{
 	font-family: 'Open Sans', sans-serif;
 	width: 80%;
+	color: white;
 	padding: 0%;
 	margin:  25px 0% 0% 0%;
 	font-size: 16px;
