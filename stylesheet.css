@@ -1,0 +1,495 @@
+
+
+
+
+/* INDEX PAGE */
+
+
+
+
+/* BODY */
+
+
+body{
+	background: #FAC22B;
+	width: 100%;
+	padding: 0%;
+	margin: 0%;
+}
+
+
+/* TOP */
+
+
+div.top-bar{
+	background: #009DA1;
+	width: 100%;
+	padding: 0%;
+	margin: 0%;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+}
+
+i.fa-bars{
+	margin: 1% 0% 1% 1%;
+	color: white;
+	font-size: 36px;
+	cursor: pointer;	
+}
+
+i.fa-cog{
+	float: right;
+	margin: 1% 1% 1% 0%;
+	color: white;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+
+/* MIDDLE-TOP */
+
+
+div.middle-top-bar{
+	position: relative;
+	background: #009DA1;
+	width: 100%;
+	padding: 0%;
+	margin: 0%;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+}
+
+img.middle-top-background{
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 0%;
+	margin: 0%;
+}
+
+div.middle-top-text{
+	font-family: 'Open Sans', sans-serif;
+	background: #603E95;
+	font-size: 36px;
+	position: absolute;
+    top: 10%;
+    left: 10%;
+	width: 80%;
+	padding: 0%;
+	margin: 0%;
+	color: white;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+}
+
+@media only screen and (max-width: 600px) {
+   
+	div.middle-top-text{
+        font-size: 12px;
+    }
+	
+}
+
+
+/* MIDDLE-BOTTOM */
+
+
+div.middle-bottom-bar{
+	font-family: 'Open Sans', sans-serif;
+	background: #009DA1;
+	width: 98%;
+	padding: 1%;
+	margin: 0%;
+	color: white;
+	font-size: 24px;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+}
+
+@media only screen and (max-width: 600px) {
+   
+	div.middle-bottom-bar{
+        font-size: 12px;
+    }
+	
+}
+
+
+/* BOTTOM */
+
+
+div.bottom-bar{
+	position: relative;
+	width: 100%;
+	padding: 0%;
+	margin: 0%;
+}
+
+div.link{
+	display: block;
+	overflow: auto;
+	background: #603E95;
+	height: 100px;
+	width: 100%;
+	padding: 0%;
+	margin: 0%;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+}
+
+img.bottom-background{
+	display: block;
+	width: 20%;
+	height: 100%;
+	padding: 0%;
+	margin: 0%;
+}
+
+div.bottom-text{
+	float: right;
+	font-family: 'Open Sans', sans-serif;
+	background: #603E95;
+	width: 55%;
+	height: 50%;
+	padding: 2.5% 0% 0% 0%;
+	margin: 0% 0% 0% 0%;
+	color: white;
+	font-size: 30px;
+}
+
+button.bottom-button{
+	float: right;
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	background: #D7255D;
+	width: 20%;
+	height: 100%;
+	padding: 0%;
+	margin: 0%;
+	color: white;
+	font-size: 30px;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+		
+	div.bottom-text{
+        font-size: 24px;
+		padding: 2% 0% 0% 0%;
+    }
+		
+}
+
+@media only screen and (max-width: 600px) {
+	
+	div.link{
+		height: 50px;
+	}
+	
+	div.bottom-text{
+        font-size: 12px;
+		padding: 1.5% 0% 0% 0%;
+    }
+	
+	button.bottom-button{
+        font-size: 12px;
+    }
+	
+}
+
+
+
+
+/* SEARCH PAGE */
+
+
+
+
+/* MIDDLE */
+
+
+div.middle-bar{
+	background: #603E95;
+	width: 100%;
+	height: 100px;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+}
+
+from.search{
+	width: 100%;
+	height: 100%;
+	padding: 0%;
+	margin: 0%;
+}
+
+label.search{
+	font-family: 'Open Sans', sans-serif;
+	width: 20%;
+	color: white;
+	font-size: 30px;
+	padding: 25px 0% 0% 2.5%;
+	margin: 0%;
+}
+
+input.search{
+	font-family: 'Open Sans', sans-serif;
+	width: 50%;
+	padding: 0%;
+	margin:  25px 0% 0% 0%;
+	font-size: 30px;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+}
+
+@media only screen and (max-width: 600px) {
+	
+	label.search{
+		font-size: 16px;
+	}
+
+	input.search{
+		font-size: 16px;
+	}
+	
+}
+
+
+
+
+/* SEARCH PAGE */
+
+
+
+
+/* TEXT INPUTS */
+
+div.change{
+	display: block;
+	overflow: auto;
+	background: #603E95;
+	width: 100%;
+	height: 600px;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+}
+
+label.insert-name{
+	font-family: 'Open Sans', sans-serif;
+	width: 30%;
+	color: white;
+	font-size: 30px;
+	padding: 25px 0% 0% 2.5%;
+	margin: 0%;
+}
+
+input.insert-name{
+	font-family: 'Open Sans', sans-serif;
+	width: 60%;
+	padding: 0%;
+	margin:  25px 0% 0% 0%;
+	font-size: 30px;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+}
+
+label.insert-description{
+	font-family: 'Open Sans', sans-serif;
+	width: 30%;
+	color: white;
+	font-size: 30px;
+	padding: 25px 0% 0% 2.5%;
+	margin: 0%;
+}
+
+input.insert-description{
+	font-family: 'Open Sans', sans-serif;
+	width: 60%;
+	padding: 0%;
+	margin:  25px 0% 0% 0%;
+	font-size: 30px;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+}
+
+
+/* DATA INPUTS */
+
+
+label.insert-date{
+	font-family: 'Open Sans', sans-serif;
+	width: 30%;
+	color: white;
+	font-size: 30px;
+	padding: 25px 0% 0% 2.5%;
+	margin: 0%;
+}
+
+label.insert-time{
+	font-family: 'Open Sans', sans-serif;
+	width: 30%;
+	color: white;
+	font-size: 30px;
+	padding: 25px 0% 0% 2.5%;
+	margin: 0%;
+}
+
+label.insert-picture{
+	font-family: 'Open Sans', sans-serif;
+	width: 30%;
+	color: white;
+	font-size: 30px;
+	padding: 25px 0% 0% 2.5%;
+	margin: 0%;
+}
+
+label.insert-alarm{
+	font-family: 'Open Sans', sans-serif;
+	width: 30%;
+	color: white;
+	font-size: 30px;
+	padding: 25px 0% 0% 2.5%;
+	margin: 0%;
+}
+
+label.insert-onend{
+	font-family: 'Open Sans', sans-serif;
+	width: 30%;
+	color: white;
+	font-size: 30px;
+	padding: 25px 0% 0% 2.5%;
+	margin: 0%;
+}
+
+
+/* ICONS */
+
+
+i.fa-calendar{
+	margin: 1% 0% 1% 1%;
+	color: white;
+	font-size: 36px;
+	cursor: pointer;	
+}
+
+i.fa-clock{
+	margin: 1% 1% 1% 0%;
+	color: white;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+i.fa-camera{
+	margin: 1% 1% 1% 0%;
+	color: white;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+i.fa-stopwatch{
+	margin: 1% 1% 1% 0%;
+	color: white;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+i.fa-calendar-times{
+	margin: 1% 1% 1% 0%;
+	color: white;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+/* BUTTONS */
+
+
+button.confirm-button {
+	font-family: 'Open Sans', sans-serif;
+	background: #D7255D;
+	width: 20%;
+	height: 100%;
+	padding: 0%;
+	margin: 0%;
+	color: white;
+	font-size: 30px;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+	cursor: pointer;
+}
+
+button.cancel-button {
+	float: right;
+	font-family: 'Open Sans', sans-serif;
+	background: #D7255D;
+	width: 20%;
+	height: 100%;
+	padding: 0%;
+	margin: 0%;
+	color: white;
+	font-size: 30px;
+	border-style: solid;
+	border-color: black; 
+	border-width: 1%;
+	cursor: pointer;
+}
+
+
+
+
+
+
+/* DROPDOWN */
+
+
+.fa fa-bars {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.fa fa-bars:hover, .menu-dropdown:focus {
+    background-color: #2980B9;
+}
+
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-dropdown button:hover {background-color: #ddd;}
+
+.show {display: block;}

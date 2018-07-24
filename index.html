@@ -1,0 +1,219 @@
+<!DOCTYPE html><!-- Defines the document as HTML --> 
+<html><!-- Creates Hyper Text Markup Language Element -->
+	<head><!-- Creates an head element -->
+	
+		<title>Main</title>
+		<meta charset="utf-8"><!-- Sets Unicode Character Set -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Sets View-port scale -->
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		
+		
+		<link rel="stylesheet" href="jquerymobile\jquery.mobile.structure-1.4.5.min.css" /><!-- Link to Jquerymobile stylesheet -->
+		<script src="jquerymobile\jquery-1.11.1.min.js" type="text/javascript"></script><!-- Link to Jquerymobile script-->
+        <script src="jquerymobile\jquery.mobile-1.4.5.min.js" type="text/javascript"></script><!-- Link to Jquerymobile script-->
+		<script src="jquerymobile\jquery-1.8.3.min.js" type="text/javascript"></script><!-- Link to Jquerymobile script-->
+		<script src="cordova.js" type="text/javascript" charset="utf-8" ></script><!-- Link to Cordova script-->
+		
+		
+		<link rel="stylesheet" type="text/css" href="stylesheet.css" /><!-- Link to stylesheet -->
+		<script type="text/javascript" src="javascript.js" charset="utf-8"></script><!-- Link to javascript -->
+		<script type="text/javascript" src="menu.js" charset="utf-8"></script>
+		<script src="http://www.datejs.com/build/date.js" type="text/javascript"></script><!-- Link to Date script-->
+	
+	</head><!-- Closes the head element -->	
+	<body><!-- Creates an body element -->
+		
+		
+		<!-- First Page -->
+		<div data-role="page" id="pageone">
+		
+			<div class="top-bar">
+				
+				<div class="menu-dropdown">
+					<button class="fa fa-bars" onclick="menuOne();"></button>
+					<div id="menuOne" class="dropdown-content">
+						<button onclick='window.location = "#pagetwo" ;'>Search Event</button>
+						<button onclick='window.location = "#pagethree" ;'>Change Event</button>
+					</div>
+				</div>
+				
+				
+				<i class="fa fa-cog" onclick="Settings();"></i>
+				
+			</div>
+			
+			
+			<div class="middle-top-bar">
+			
+				<img class="middle-top-background" src="images/1_Croatia.jpg"></img>	
+				
+				<div class="middle-top-text">
+					
+					<div id="event" >Croatia: 20th June 2018</div>
+					<div id="countdown" >20 Days, 10 Hours, 5 Minutes, 33 Seconds Until my Event!!!</div>	
+			
+				</div>
+		
+			</div>
+			
+			
+			<div class="middle-bottom-bar">
+			
+				<div id="description" >I am really excited about getting drunk, everyday, all day. Gonna make some sandcastles on the beach.</div>
+			
+			</div>
+			
+			
+			<div class="bottom-bar">
+				
+				<div class="link">
+				
+					<button class="bottom-button">66 Days</button>
+					<div class="bottom-text" id="link">San Sebastian: 8th Sept 2018</div>
+					<img class="bottom-background" src="images/2_San_Sebastian.jpg"></img>
+				
+				</div>
+				
+				<div class="link">
+				
+					<button class="bottom-button">82 Days</button>
+					<div class="bottom-text" id="link">Matt's 21st Birthday: 3rd Oct 2018</div>
+					<img class="bottom-background" src="images/3_Matt's_Birthday.jpg"></img>
+				
+				</div>
+				
+				<div class="link">
+				
+					<button class="bottom-button">108 Days</button>
+					<div class="bottom-text" id="link">Peru: 1st May 2019</div>
+					<img class="bottom-background" src="images/4_Peru.jpg"></img>
+				
+				</div>
+				
+			</div>
+		
+		</div> 
+		
+		
+		<!-- Second Page -->
+		<div data-role="page" id="pagetwo">
+
+			<div class="top-bar">
+			
+				<div class="menu-dropdown">
+					<button class="fa fa-bars" onclick="menuTwo();"></button>
+					<div id="menuTwo" class="dropdown-content">
+						<button onclick='window.location = "#pageone" ;'>Home</button>
+						<button onclick='window.location = "#pagethree" ;'>Change Event</button>
+					</div>
+				</div>
+				
+				
+				<i class="fa fa-cog" onclick="Settings();"></i>
+				
+			</div>
+			
+			
+			<div class="middle-bar">
+				
+				<form class="search">
+
+					<label class="search" for="search">Event Name: </label><input type="text" name="search" class="search">
+				
+				</form>
+		
+			</div>
+			
+
+			<div class="bottom-bar">
+				
+				<div class="link">
+				
+					<button class="bottom-button">14 Days</button>
+					<div class="bottom-text" id="link">Croatia: 20th June 2018</div>
+					<img class="bottom-background" src="images/1_Croatia.jpg"></img>
+				
+				</div>
+				
+				<div class="link">
+				
+					<button class="bottom-button">66 Days</button>
+					<div class="bottom-text" id="link">San Sebastian: 8th Sept 2018</div>
+					<img class="bottom-background" src="images/2_San_Sebastian.jpg"></img>
+				
+				</div>
+				
+				<div class="link">
+				
+					<button class="bottom-button">82 Days</button>
+					<div class="bottom-text" id="link">Matt's 21st Birthday: 3rd Oct 2018</div>
+					<img class="bottom-background" src="images/3_Matt's_Birthday.jpg"></img>
+				
+				</div>
+				
+				<div class="link">
+				
+					<button class="bottom-button">108 Days</button>
+					<div class="bottom-text" id="link">Peru: 1st May 2019</div>
+					<img class="bottom-background" src="images/4_Peru.jpg"></img>
+				
+				</div>
+				
+				<div class="link" id="stored">
+				
+				
+				
+				
+				
+				</div>
+				
+			</div>
+			
+		</div>	
+			
+			
+		<!-- Thrid Page -->
+		<div data-role="page" id="pagethree">			
+			
+			<div class="top-bar">
+				
+				<div class="menu-dropdown">
+					<button class="fa fa-bars" onclick="menuThree();"></button>
+					<div id="menuThree" class="dropdown-content">
+						<button onclick='window.location = "#pageone" ;'>Home</button>
+						<button onclick='window.location = "#pagetwo" ;'>Search Event</button>
+					</div>
+				</div>
+				
+				
+				<i class="fa fa-cog" onclick="Settings();"></i>
+				
+			</div>
+			
+			
+			<div class="change">
+			
+				<form class="change">
+				
+					<label class="insert-name" for="name">Name: </label><input type="text" name="insert-name" class="insert-name" id="nameInput" value="" placeholder="Enter the event name"><br>
+					<label class="insert-description" for="description">Description: </label><input type="text" name="insert-description" class="insert-description" id="descriptionInput" value="" placeholder="Enter the event description"><br>
+					
+					<label class="insert-date" for="date">Date: </label><i class="fa fa-calendar" onclick="Menu();"></i><input type="date" id="dateInput" value=""><br>
+					<label class="insert-time" for="time">Time: </label><i class="fa fa-clock" onclick="Menu();"></i><input type="time" id="timeInput" value=""><br>
+				
+					<br><button class="confirm-button" onclick="Process();">Confirm</button><br>
+					
+					<div id="target" ></div>
+					<div id="countdown" ></div>	
+					
+				</form>
+				
+			</div>
+			
+		</div>	
+		
+		
+	</body><!-- Closes the body element -->	
+</html><!-- Closes the html element -->	
