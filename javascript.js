@@ -128,7 +128,7 @@ function Premade() {
 	
 	// Slovenia.
 	countdownStorage[2] = 2;
-	found = { "id":2, "name":"Slovenia", "description":"Explore the Country", "target":"08:00 Tuesday September 14th 2018 ", "date":1536044400000 }
+	found = { "id":2, "name":"Slovenia", "description":"Explore the Country", "target":"08:00 Tuesday September 4th 2018 ", "date":1536044400000 }
 	countdownJSON = JSON.stringify(found);
 	localStorage.setItem(2, countdownJSON);
 	text = localStorage.getItem(2);
@@ -232,13 +232,13 @@ function startCountdown() {
 				dateStored[loopTwo].className = " bottom-button";
 				dateContent[loopTwo] = document.createTextNode("EXPIRED");
 				dateStored[loopTwo].appendChild(dateContent[loopTwo]);
-				document.getElementById("stored").appendChild(dateStored[loopTwo]);
+				document.getElementById(loopTwo).appendChild(dateStored[loopTwo]);
 				
 				nameStored[loopTwo] = document.createElement("div");
 				nameStored[loopTwo].className = " bottom-text";
 				nameContent[loopTwo] = document.createTextNode(object[loopTwo].name + ":   " + object[loopTwo].target);
 				nameStored[loopTwo].appendChild(nameContent[loopTwo]);
-				document.getElementById("stored").appendChild(nameStored[loopTwo]);
+				document.getElementById(loopTwo).appendChild(nameStored[loopTwo]);
 				
 				imageStored[loopTwo] = document.createElement("img");
 				imageStored[loopTwo].className = "bottom-background";
