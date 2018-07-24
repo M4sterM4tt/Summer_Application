@@ -183,7 +183,8 @@ function Process() {
 			localStorage.setItem(loop, countdownJSON);
 			text = localStorage.getItem(loop);
 			object[loop] = JSON.parse(text);
-			console.log(object[loop])
+			console.log(object[loop]);
+			
 		}
 		
 	}
@@ -226,18 +227,18 @@ function startCountdown() {
 				divStored[loopTwo].className = "link";
 				divStored[loopTwo].id = loopTwo;
 				document.getElementById("stored").appendChild(divStored[loopTwo]);
-				
-				nameStored[loopTwo] = document.createElement("div");
-				nameStored[loopTwo].className += " bottom-text";
-				nameContent[loopTwo] = document.createTextNode(object[loopTwo].name + ":   " + object[loopTwo].target);
-				nameStored[loopTwo].appendChild(nameContent[loopTwo]);
-				document.getElementById("stored").appendChild(nameStored[loopTwo]);
 
 				dateStored[loopTwo] = document.createElement("button");
-				dateStored[loopTwo].className += " bottom-button";
+				dateStored[loopTwo].className = " bottom-button";
 				dateContent[loopTwo] = document.createTextNode("EXPIRED");
 				dateStored[loopTwo].appendChild(dateContent[loopTwo]);
 				document.getElementById("stored").appendChild(dateStored[loopTwo]);
+				
+				nameStored[loopTwo] = document.createElement("div");
+				nameStored[loopTwo].className = " bottom-text";
+				nameContent[loopTwo] = document.createTextNode(object[loopTwo].name + ":   " + object[loopTwo].target);
+				nameStored[loopTwo].appendChild(nameContent[loopTwo]);
+				document.getElementById("stored").appendChild(nameStored[loopTwo]);
 				
 				imageStored[loopTwo] = document.createElement("img");
 				imageStored[loopTwo].className = "bottom-background";
@@ -262,7 +263,7 @@ function startCountdown() {
 				
 				nameStored[loopTwo] = document.createElement("div");
 				nameStored[loopTwo].className = "bottom-text";
-				nameContent[loopTwo] = document.createTextNode(objectTwo[loopTwo].name + ":   " + objectTwo[loopTwo].target);
+				nameContent[loopTwo] = document.createTextNode(object[loopTwo].name + ":   " + object[loopTwo].target);
 				nameStored[loopTwo].appendChild(nameContent[loopTwo]);
 				document.getElementById(loopTwo).appendChild(nameStored[loopTwo]);
 				
@@ -285,7 +286,7 @@ function startCountdown() {
 function Countdown() {
 	
     start = setInterval(function() {
-	console.log("Countdown");	
+		console.log("Countdown");	
 		
 		// Get todays date and time.
 		now = new Date().getTime();
@@ -300,70 +301,73 @@ function Countdown() {
 			text = localStorage.getItem(loopThree);
 			objectTwo[loopThree] = JSON.parse(text);	
 			
-			// Get todays date and time.
-			distanceStored[loopThree] = objectTwo[loopThree].date - now;
-				
-			// Time calculations for days, hours, minutes and seconds.
-			daysStored[loopThree] = Math.floor(distanceStored[loopThree] / (1000 * 60 * 60 * 24));
-			hoursStored[loopThree] = Math.floor((distanceStored[loopThree] % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			minutesStored[loopThree] = Math.floor((distanceStored[loopThree] % (1000 * 60 * 60)) / (1000 * 60));
-			secondsStored[loopThree] = Math.floor((distanceStored[loopThree] % (1000 * 60)) / 1000);
-				
-			// Output the Result.
-			if (distanceStored[loopThree] < 0) {
-				// When the Countdown is Over.
-				
-				divStored[loopThree] = document.createElement("div");
-				divStored[loopThree].className = "link";
-				divStored[loopThree].id = loopThree;
-				document.getElementById("stored").appendChild(divStored[loopThree]);
-				
-				dateStored[loopThree] = document.createElement("button");
-				dateStored[loopThree].className += " bottom-button";
-				dateContent[loopThree] = document.createTextNode(daysStored[loopThree] + " Days");
-				dateStored[loopThree].appendChild(dateContent[loopThree]);
-				document.getElementById("stored").appendChild(dateStored[loopThree]);
-				
-				nameStored[loopThree] = document.createElement("div");
-				nameStored[loopThree].className += " bottom-text";
-				nameContent[loopThree] = document.createTextNode("EXPIRED");
-				nameStored[loopThree].appendChild(nameContent[loopThree]);
-				document.getElementById("stored").appendChild(nameStored[loopThree]);
-				
-				imageStored[loopThree] = document.createElement("img");
-				imageStored[loopThree].className = "bottom-background";
-				imageStored[loopThree].setAttribute('src', 'images/1_Croatia.jpg');
-				document.getElementById(loopThree).appendChild(imageStored[loopThree]);
-				
-				localStorage.removeItem(loopThree);
-			}
-			else {
-				// Countdown is still going.
-
-				divStored[loopThree] = document.createElement("div");
-				divStored[loopThree].className = "link";
-				divStored[loopThree].id = loopThree;
-				document.getElementById("stored").appendChild(divStored[loopThree]);
-				
-				dateStored[loopThree] = document.createElement("button");
-				dateStored[loopThree].className = "bottom-button";
-				dateContent[loopThree] = document.createTextNode(daysStored[loopThree] + " Days");
-				dateStored[loopThree].appendChild(dateContent[loopThree]);
-				document.getElementById(loopThree).appendChild(dateStored[loopThree]);				
-				
-				nameStored[loopThree] = document.createElement("div");
-				nameStored[loopThree].className = "bottom-text";
-				nameContent[loopThree] = document.createTextNode(objectTwo[loopThree].name + ":   " + objectTwo[loopThree].target);
-				nameStored[loopThree].appendChild(nameContent[loopThree]);
-				document.getElementById(loopThree).appendChild(nameStored[loopThree]);
-				
-				imageStored[loopThree] = document.createElement("img");
-				imageStored[loopThree].className = "bottom-background";
-				imageStored[loopThree].setAttribute('src', 'images/1_Croatia.jpg');
-				document.getElementById(loopThree).appendChild(imageStored[loopThree]);
+			if (objectTwo[loopThree] != 0 && objectTwo[loopThree] != null) {
+			
+				// Get todays date and time.
+				distanceStored[loopThree] = objectTwo[loopThree].date - now;
 					
-			}
-				
+				// Time calculations for days, hours, minutes and seconds.
+				daysStored[loopThree] = Math.floor(distanceStored[loopThree] / (1000 * 60 * 60 * 24));
+				hoursStored[loopThree] = Math.floor((distanceStored[loopThree] % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				minutesStored[loopThree] = Math.floor((distanceStored[loopThree] % (1000 * 60 * 60)) / (1000 * 60));
+				secondsStored[loopThree] = Math.floor((distanceStored[loopThree] % (1000 * 60)) / 1000);
+					
+				// Output the Result.
+				if (distanceStored[loopThree] < 0) {
+					// When the Countdown is Over.
+					
+					divStored[loopThree] = document.createElement("div");
+					divStored[loopThree].className = "link";
+					divStored[loopThree].id = loopThree;
+					document.getElementById("stored").appendChild(divStored[loopThree]);
+					
+					dateStored[loopThree] = document.createElement("button");
+					dateStored[loopThree].className = "bottom-button";
+					dateContent[loopThree] = document.createTextNode("EXPIRED");
+					dateStored[loopThree].appendChild(dateContent[loopThree]);
+					document.getElementById(loopThree).appendChild(dateStored[loopThree]);
+					
+					nameStored[loopThree] = document.createElement("div");
+					nameStored[loopThree].className = "bottom-text";
+					nameContent[loopThree] = document.createTextNode(objectTwo[loopThree].name + ":   " + objectTwo[loopThree].target);
+					nameStored[loopThree].appendChild(nameContent[loopThree]);
+					document.getElementById(loopThree).appendChild(nameStored[loopThree]);
+					
+					imageStored[loopThree] = document.createElement("img");
+					imageStored[loopThree].className = "bottom-background";
+					imageStored[loopThree].setAttribute('src', 'images/1_Croatia.jpg');
+					document.getElementById(loopThree).appendChild(imageStored[loopThree]);
+					
+					localStorage.removeItem(loopThree);
+				}
+				else {
+					// Countdown is still going.
+
+					divStored[loopThree] = document.createElement("div");
+					divStored[loopThree].className = "link";
+					divStored[loopThree].id = loopThree;
+					document.getElementById("stored").appendChild(divStored[loopThree]);
+					
+					dateStored[loopThree] = document.createElement("button");
+					dateStored[loopThree].className = "bottom-button";
+					dateContent[loopThree] = document.createTextNode(daysStored[loopThree] + " Days");
+					dateStored[loopThree].appendChild(dateContent[loopThree]);
+					document.getElementById(loopThree).appendChild(dateStored[loopThree]);				
+					
+					nameStored[loopThree] = document.createElement("div");
+					nameStored[loopThree].className = "bottom-text";
+					nameContent[loopThree] = document.createTextNode(objectTwo[loopThree].name + ":   " + objectTwo[loopThree].target);
+					nameStored[loopThree].appendChild(nameContent[loopThree]);
+					document.getElementById(loopThree).appendChild(nameStored[loopThree]);
+					
+					imageStored[loopThree] = document.createElement("img");
+					imageStored[loopThree].className = "bottom-background";
+					imageStored[loopThree].setAttribute('src', 'images/1_Croatia.jpg');
+					document.getElementById(loopThree).appendChild(imageStored[loopThree]);
+						
+				}
+			
+			}	
 		}	
 		
 	}, 1000);
