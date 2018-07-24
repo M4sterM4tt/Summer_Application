@@ -39,6 +39,7 @@ var countdownJSON;
 var loop;
 var loopTwo;
 var loopThree;
+var loopFour;
 var object;
 var objectTwo;
 var collection;
@@ -47,7 +48,7 @@ var collection;
 
 
 window.onload = function() {
-	
+	window.location = "#pagetwo";
 	
 	// Format Time.
 	now = new Date();
@@ -117,7 +118,6 @@ function Process() {
 	targetDate = new Date(dateInput.value);
 	targetCountdown = targetDate.toString("MMMM dd yyyy") + " " + targetTime.toString("HH:mm");
 	targetDisplay = targetTime.toString("HH:mm") + " " + targetDate.toString("dddd MMMM yyyy") + " ";
-	document.getElementById("target").innerHTML = targetCountdown;
 	date = new Date(targetCountdown).getTime();
 	
 	found = false;
@@ -138,6 +138,7 @@ function Process() {
 		
 	
 	empty = false;
+	window.location = "#pagetwo";
 	Countdown();
 	
 }
@@ -307,10 +308,7 @@ function Countdown() {
 				imageStored[loopThree].className = "bottom-background";
 				imageStored[loopThree].setAttribute('src', 'images/1_Croatia.jpg');
 				document.getElementById(loopThree).appendChild(imageStored[loopThree]);
-				
-				
-
-				
+					
 			}
 				
 		}	
@@ -318,3 +316,13 @@ function Countdown() {
 	}, 1000);
 
 }
+
+
+
+(function() {
+	for(loopFour = 1; loopThree < 1000; loopFour+=1) {
+		document.getElementById(loopFour).onclick = function() { 
+			window.location = "#pageone";
+		};
+	}
+})();
