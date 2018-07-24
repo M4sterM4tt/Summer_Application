@@ -136,8 +136,7 @@ function Process() {
 		
 	}
 		
-	
-	empty = false;
+		
 	window.location = "#pagetwo";
 	Countdown();
 	
@@ -171,6 +170,11 @@ function startCountdown() {
 			if (distanceStored[loopTwo] < 0) {
 				// When the Countdown is Over.
 				
+				divStored[loopTwo] = document.createElement("div");
+				divStored[loopTwo].className = "link";
+				divStored[loopTwo].id = loopTwo;
+				document.getElementById("stored").appendChild(divStored[loopTwo]);
+				
 				nameStored[loopTwo] = document.createElement("div");
 				nameStored[loopTwo].className += " bottom-text";
 				nameContent[loopTwo] = document.createTextNode(object[loopTwo].name + ":   " + object[loopTwo].target);
@@ -183,22 +187,37 @@ function startCountdown() {
 				dateStored[loopTwo].appendChild(dateContent[loopTwo]);
 				document.getElementById("stored").appendChild(dateStored[loopTwo]);
 				
+				imageStored[loopTwo] = document.createElement("img");
+				imageStored[loopTwo].className = "bottom-background";
+				imageStored[loopTwo].setAttribute('src', 'images/1_Croatia.jpg');
+				document.getElementById(loopTwo).appendChild(imageStored[loopTwo]);
+				
 				localStorage.removeItem(loopTwo);
 			}
 			else {
 				// Countdown is still going.
 				
-				nameStored[loopTwo] = document.createElement("div");
-				nameStored[loopTwo].className += " bottom-text";
-				nameContent[loopTwo] = document.createTextNode(object[loopTwo].name + ":   " + object[loopTwo].target);
-				nameStored[loopTwo].appendChild(nameContent[loopTwo]);
-				document.getElementById("stored").appendChild(nameStored[loopTwo]);
-
+				divStored[loopTwo] = document.createElement("div");
+				divStored[loopTwo].className = "link";
+				divStored[loopTwo].id = loopTwo;
+				document.getElementById("stored").appendChild(divStored[loopTwo]);
+				
 				dateStored[loopTwo] = document.createElement("button");
-				dateStored[loopTwo].className += " bottom-button";
-				dateContent[loopTwo] = document.createTextNode(daysStored[loopTwo]);
+				dateStored[loopTwo].className = "bottom-button";
+				dateContent[loopTwo] = document.createTextNode(daysStored[loopTwo] + " Days");
 				dateStored[loopTwo].appendChild(dateContent[loopTwo]);
-				document.getElementById("stored").appendChild(dateStored[loopTwo]);
+				document.getElementById(loopTwo).appendChild(dateStored[loopTwo]);				
+				
+				nameStored[loopTwo] = document.createElement("div");
+				nameStored[loopTwo].className = "bottom-text";
+				nameContent[loopTwo] = document.createTextNode(objectTwo[loopTwo].name + ":   " + objectTwo[loopTwo].target);
+				nameStored[loopTwo].appendChild(nameContent[loopTwo]);
+				document.getElementById(loopTwo).appendChild(nameStored[loopTwo]);
+				
+				imageStored[loopTwo] = document.createElement("img");
+				imageStored[loopTwo].className = "bottom-background";
+				imageStored[loopTwo].setAttribute('src', 'images/1_Croatia.jpg');
+				document.getElementById(loopTwo).appendChild(imageStored[loopTwo]);
 				
 			}
 				
@@ -218,35 +237,7 @@ function Countdown() {
 		
 		// Get todays date and time.
 		now = new Date().getTime();
-			
-		if (empty == false) {
-			
-			
-			// For the First page.
-			
-			// Find the distance between now an the count down date.
-			distance = date - now;
-			
-			// Time calculations for days, hours, minutes and seconds.
-			days = Math.floor(distance / (1000 * 60 * 60 * 24));
-			hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-			seconds = Math.floor((distance % (1000 * 60)) / 1000);
-			
-			// Output the Result.
-			if (distance < 0) {
-				// When the Countdown is Over.
-				document.getElementById("countdown").innerHTML = name + ":   EXPIRED";
-			}
-			else {
-				// Countdown is still going.
-				document.getElementById("countdown").innerHTML = name + ":   " + days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds. ";
-			}
-			
-		}
-		
-		
-		// For the Second page.
+
 		
 		// Clears HTML Element.
 		document.getElementById("stored").innerHTML = "";
@@ -270,6 +261,11 @@ function Countdown() {
 			if (distanceStored[loopThree] < 0) {
 				// When the Countdown is Over.
 				
+				divStored[loopThree] = document.createElement("div");
+				divStored[loopThree].className = "link";
+				divStored[loopThree].id = loopThree;
+				document.getElementById("stored").appendChild(divStored[loopThree]);
+				
 				dateStored[loopThree] = document.createElement("button");
 				dateStored[loopThree].className += " bottom-button";
 				dateContent[loopThree] = document.createTextNode(daysStored[loopThree] + " Days");
@@ -281,6 +277,11 @@ function Countdown() {
 				nameContent[loopThree] = document.createTextNode("EXPIRED");
 				nameStored[loopThree].appendChild(nameContent[loopThree]);
 				document.getElementById("stored").appendChild(nameStored[loopThree]);
+				
+				imageStored[loopThree] = document.createElement("img");
+				imageStored[loopThree].className = "bottom-background";
+				imageStored[loopThree].setAttribute('src', 'images/1_Croatia.jpg');
+				document.getElementById(loopThree).appendChild(imageStored[loopThree]);
 				
 				localStorage.removeItem(loopThree);
 			}
@@ -317,12 +318,3 @@ function Countdown() {
 
 }
 
-
-
-(function() {
-	for(loopFour = 1; loopThree < 1000; loopFour+=1) {
-		document.getElementById(loopFour).onclick = function() { 
-			window.location = "#pageone";
-		};
-	}
-})();

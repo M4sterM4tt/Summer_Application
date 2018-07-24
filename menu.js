@@ -26,6 +26,13 @@ window.onclick = function(event) {
 			}
 		}
 	}
+	
+	for(loopFour = 1; loopThree < 1000; loopFour+=1) {
+		document.getElementById(loopFour).onclick = function() { 
+			window.location = "#pageone";
+		};
+	}
+	
 }
 
 
