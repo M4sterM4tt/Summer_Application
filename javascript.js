@@ -27,6 +27,8 @@ var minutesStored;
 var secondsStored;
 var nameStored;
 var dateStored;
+var divStored;
+var imageStored;
 var nameContent;
 var dateContent;
 
@@ -68,8 +70,12 @@ window.onload = function() {
 	dateStored = [0];
 	nameContent = [0];
 	dateContent = [0];
+	imageStored = [0];
+	divStored = [0];
+	
 	
 	for(draw = 0; draw < 999; draw+=1) {
+		
 		object.push(0);
 		objectTwo.push(0);
 		countdownStorage.push(0);
@@ -82,6 +88,9 @@ window.onload = function() {
 		dateStored.push(0);
 		nameContent.push(0);
 		dateContent.push(0);
+		imageStored.push(0);
+		divStored.push(0);
+		
 	}
 	
 	// Setting Switches.
@@ -276,18 +285,31 @@ function Countdown() {
 			}
 			else {
 				// Countdown is still going.
-							
+
+				divStored[loopThree] = document.createElement("div");
+				divStored[loopThree].className = "link";
+				divStored[loopThree].id = loopThree;
+				document.getElementById("stored").appendChild(divStored[loopThree]);
+				
 				dateStored[loopThree] = document.createElement("button");
-				dateStored[loopThree].className += " bottom-button";
+				dateStored[loopThree].className = "bottom-button";
 				dateContent[loopThree] = document.createTextNode(daysStored[loopThree] + " Days");
 				dateStored[loopThree].appendChild(dateContent[loopThree]);
-				document.getElementById("stored").appendChild(dateStored[loopThree]);
+				document.getElementById(loopThree).appendChild(dateStored[loopThree]);				
 				
 				nameStored[loopThree] = document.createElement("div");
-				nameStored[loopThree].className += " bottom-text";
+				nameStored[loopThree].className = "bottom-text";
 				nameContent[loopThree] = document.createTextNode(objectTwo[loopThree].name + ":   " + objectTwo[loopThree].target);
 				nameStored[loopThree].appendChild(nameContent[loopThree]);
-				document.getElementById("stored").appendChild(nameStored[loopThree]);
+				document.getElementById(loopThree).appendChild(nameStored[loopThree]);
+				
+				imageStored[loopThree] = document.createElement("img");
+				imageStored[loopThree].className = "bottom-background";
+				imageStored[loopThree].setAttribute('src', 'images/1_Croatia.jpg');
+				document.getElementById(loopThree).appendChild(imageStored[loopThree]);
+				
+				
+
 				
 			}
 				
