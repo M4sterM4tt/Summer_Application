@@ -49,7 +49,7 @@ window.onload = function() {
 	
 	// Format Time.
 	now = new Date();
-	formatNow = now.toString("HH:mm:ss");
+	formatNow = now.toString("HH:mm");
 	document.getElementById("timeInput").value = formatNow;
 	formatNow = now.toString("yyyy-MM-dd");
 	document.getElementById("dateInput").value = formatNow;
@@ -106,7 +106,8 @@ function Process() {
 	description = descriptionInput.value;
 	targetTime = timeInput.value;
 	targetDate = new Date(dateInput.value);
-	targetCountdown = targetDate.toString("MMMM dd yyyy") + " " + targetTime.toString("HH:mm:ss");
+	targetCountdown = targetDate.toString("MMMM dd yyyy") + " " + targetTime.toString("HH:mm");
+	targetDisplay = targetTime.toString("HH:mm") + " " + targetDate.toString("dddd MMMM yyyy") + " ";
 	document.getElementById("target").innerHTML = targetCountdown;
 	date = new Date(targetCountdown).getTime();
 	
@@ -116,7 +117,7 @@ function Process() {
 		if (loop != countdownStorage[loop] && found == false) {	
 			
 			countdownStorage[loop] = loop;
-			found = { "id":countdownStorage[loop], "name":name, "description":description, "target":targetCountdown, "date":date }
+			found = { "id":countdownStorage[loop], "name":name, "description":description, "target":targetDisplay, "date":date }
 			countdownJSON = JSON.stringify(found);
 			localStorage.setItem(loop, countdownJSON);
 			text = localStorage.getItem(loop);
