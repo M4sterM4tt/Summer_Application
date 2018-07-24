@@ -190,10 +190,6 @@ button.bottom-button{
 
 @media only screen and (max-width: 600px) {
 	
-	div.link{
-		height: 50px;
-	}
-	
 	div.bottom-text{
         font-size: 12px;
 		padding: 1.5% 0% 0% 0%;
