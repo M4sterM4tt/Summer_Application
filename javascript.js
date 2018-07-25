@@ -250,6 +250,7 @@ function startCountdown() {
 				dateContent[loopTwo] = document.createTextNode("EXPIRED");
 				dateStored[loopTwo].appendChild(dateContent[loopTwo]);
 				document.getElementById(loopTwo).appendChild(dateStored[loopTwo]);
+				document.getElementById(loopTwo).onclick = function() {window.location = "#pageone";};		
 				
 				nameStored[loopTwo] = document.createElement("div");
 				nameStored[loopTwo].className = " bottom-text";
@@ -276,7 +277,8 @@ function startCountdown() {
 				dateStored[loopTwo].className = "bottom-button";
 				dateContent[loopTwo] = document.createTextNode(daysStored[loopTwo] + " Days");
 				dateStored[loopTwo].appendChild(dateContent[loopTwo]);
-				document.getElementById(loopTwo).appendChild(dateStored[loopTwo]);				
+				document.getElementById(loopTwo).appendChild(dateStored[loopTwo]);
+				document.getElementById(loopTwo).onclick = function() {window.location = "#pageone";};					
 				
 				nameStored[loopTwo] = document.createElement("div");
 				nameStored[loopTwo].className = "bottom-text";
@@ -356,7 +358,7 @@ function startCountdown() {
 					dateStored[upcomingID[draw]].className = "bottom-button";
 					dateContent[upcomingID[draw]] = document.createTextNode(daysStored[upcomingID[draw]] + " Days");
 					dateStored[upcomingID[draw]].appendChild(dateContent[upcomingID[draw]]);
-					document.getElementById(Number(1000 + upcomingID[draw])).appendChild(dateStored[upcomingID[draw]]);				
+					document.getElementById(Number(1000 + upcomingID[draw])).appendChild(dateStored[upcomingID[draw]]);					
 					
 					nameStored[upcomingID[draw]] = document.createElement("div");
 					nameStored[upcomingID[draw]].className = "bottom-text";
@@ -441,6 +443,7 @@ function Countdown() {
 					dateContent[loopThree] = document.createTextNode("EXPIRED");
 					dateStored[loopThree].appendChild(dateContent[loopThree]);
 					document.getElementById(loopThree).appendChild(dateStored[loopThree]);
+					document.getElementById(loopThree).onclick = function() {window.location = "#pageone";};
 					
 					nameStored[loopThree] = document.createElement("div");
 					nameStored[loopThree].className = "bottom-text";
@@ -468,6 +471,7 @@ function Countdown() {
 					dateContent[loopThree] = document.createTextNode(daysStored[loopThree] + " Days");
 					dateStored[loopThree].appendChild(dateContent[loopThree]);
 					document.getElementById(loopThree).appendChild(dateStored[loopThree]);				
+					document.getElementById(loopThree).onclick = function() {window.location = "#pageone";};
 					
 					nameStored[loopThree] = document.createElement("div");
 					nameStored[loopThree].className = "bottom-text";
@@ -547,7 +551,7 @@ function Countdown() {
 						dateStored[upcomingID[draw]].className = "bottom-button";
 						dateContent[upcomingID[draw]] = document.createTextNode(daysStored[upcomingID[draw]] + " Days");
 						dateStored[upcomingID[draw]].appendChild(dateContent[upcomingID[draw]]);
-						document.getElementById(Number(1000 + upcomingID[draw])).appendChild(dateStored[upcomingID[draw]]);				
+						document.getElementById(Number(1000 + upcomingID[draw])).appendChild(dateStored[upcomingID[draw]]);						
 						
 						nameStored[upcomingID[draw]] = document.createElement("div");
 						nameStored[upcomingID[draw]].className = "bottom-text";

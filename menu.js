@@ -15,6 +15,7 @@ function menuThree() {
 }
 
 window.onclick = function(event) {
+	
 	if (!event.target.matches('.fa')) {
 
 		var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -25,12 +26,6 @@ window.onclick = function(event) {
 				openDropdown.classList.remove('show');
 			}
 		}
-	}
-	
-	for(loopFour = 1; loopFour < 1000; loopFour+=1) {
-		document.getElementById(loopFour).onclick = function() { 
-			window.location = "#pageone";
-		};
 	}
 	
 }
