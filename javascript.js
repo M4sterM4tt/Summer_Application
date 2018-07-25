@@ -57,9 +57,10 @@ window.onload = function() {
 	now = new Date();
 	formatNow = now.toString("HH:mm");
 	document.getElementById("timeInput").value = formatNow;
+	document.getElementById("RetimeInput").value = formatNow;
 	formatNow = now.toString("yyyy-MM-dd");
 	document.getElementById("dateInput").value = formatNow;
-	
+	document.getElementById("RedateInput").value = formatNow;
 	
 	// Setting Arrays.
 	object = [0];
@@ -117,7 +118,7 @@ function Process() {
 	targetTime = timeInput.value;
 	targetDate = new Date(dateInput.value);
 	targetCountdown = targetDate.toString("MM dd yyyy") + " " + targetTime.toString("HH:mm");
-	targetDisplay = targetTime.toString("HH:mm") + " " + targetDate.toString("dddd MM MMMM yyyy") + " ";
+	targetDisplay = targetTime.toString("HH:mm") + " " + targetDate.toString("dddd dd MMMM yyyy") + " ";
 	date = new Date(targetCountdown).getTime();
 	
 	found = false;
@@ -135,7 +136,34 @@ function Process() {
 			
 		}
 		
-	}
+	}	
+		
+	window.location = "#pagetwo";
+	Countdown();
+	
+}
+
+
+
+
+function Reprocess() {
+	
+	console.log("Reprocess");
+	
+	name = RenameInput.value;
+	description = RedescriptionInput.value;
+	targetTime = RetimeInput.value;
+	targetDate = new Date(RedateInput.value);
+	targetCountdown = targetDate.toString("MM dd yyyy") + " " + targetTime.toString("HH:mm");
+	targetDisplay = targetTime.toString("HH:mm") + " " + targetDate.toString("dddd dd MMMM yyyy") + " ";
+	date = new Date(targetCountdown).getTime();
+	
+	found = { "id":choice, "name":name, "description":description, "target":targetDisplay, "date":date }
+	countdownJSON = JSON.stringify(found);
+	localStorage.setItem(choice, countdownJSON);
+	text = localStorage.getItem(choice);
+	object[choice] = JSON.parse(text);
+	console.log(object[choice]);
 		
 		
 	window.location = "#pagetwo";

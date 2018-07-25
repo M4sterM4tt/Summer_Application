@@ -25,6 +25,10 @@ function settingFour() {
 }
 
 
+function settingFifth() {
+    document.getElementById("settingFifth").classList.toggle("show");
+}
+
 window.onclick = function(event) {
 	
 	if (!event.target.matches('.fa')) {

@@ -111,7 +111,7 @@
 			
 			
 			
-		<!-- Thrid Page -->
+		<!-- Third Page -->
 		<div data-role="page" id="pagethree">			
 			
 			<div class="top-bar">
@@ -168,7 +168,7 @@
 				<div class="menu-dropdown">
 					<button class="fa fa-cog" onclick="settingFour();"></button>
 					<div id="settingFour" class="dropdown-content">
-						<button onclick='window.location = "#pageone" ;'>Update Event</button>
+						<button onclick='window.location = "#pagefive" ;'>Update Event</button>
 						<button onclick='localStorage.removeItem(choice);window.location = "#pagetwo";'>Delete Event</button>
 					</div>
 				</div>
@@ -194,6 +194,45 @@
 			
 				<div id="descriptionUnique" ></div>
 			
+			</div>
+			
+		</div>
+		
+		
+		
+		
+		<!-- Fifth Page -->
+		<div data-role="page" id="pagefive">			
+			
+			<div class="top-bar">
+				
+				<div class="menu-dropdown">
+					<button class="fa fa-bars" onclick="settingFifth();"></button>
+					<div id="settingFifth" class="dropdown-content">
+						<button onclick='window.location = "#pageone" ;'>Upcoming</button>
+						<button onclick='window.location = "#pagetwo" ;'>Event List</button>
+						<button onclick='window.location = "#pagethree" ;'>Add Event</button>
+					</div>
+				</div>
+				
+				
+				<i class="fa fa-cog" onclick="Settings();"></i>
+				
+			</div>
+			
+			
+			<div class="change">
+						
+					<label class="insert-name" for="name">Name: </label><input type="text" name="insert-name" class="insert-name" id="RenameInput" value="" placeholder="Enter the event name"><br>
+					<label class="insert-description" for="description">Description: </label><input type="text" name="insert-description" class="insert-description" id="RedescriptionInput" value="" placeholder="Enter the event description"><br>
+					
+					<label class="insert-date" for="date">Date: </label><input type="date" id="RedateInput" class="insert-name" value=""><br>
+					<label class="insert-time" for="time">Time: </label><input type="time" id="RetimeInput" class="insert-name" value=""><br>
+				
+					<br><button class="confirm-button" onclick="Reprocess();">Confirm</button><br>
+					
+					<div id="target" ></div>
+								
 			</div>
 			
 		</div>
