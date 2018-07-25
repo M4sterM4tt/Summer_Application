@@ -197,6 +197,15 @@ function Process() {
 }
 
 
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// startCountdown()
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 function startCountdown() {
@@ -205,6 +214,12 @@ function startCountdown() {
 	
 	// Get todays date and time.
 	now = new Date().getTime();
+	upcoming = [0];
+	upcomingID = [0];
+	for(draw = 1; draw < 6; draw+=1) {
+		upcoming.push(0);
+		upcomingID.push(0);			
+	}
 	
 	
 	for	(loopTwo = 1; loopTwo < 1000; loopTwo+=1) {
@@ -275,20 +290,108 @@ function startCountdown() {
 				document.getElementById(loopTwo).appendChild(imageStored[loopTwo]);
 				
 			}
+			
+			used = 0;
+			for(draw = 1; draw < 6; draw+=1) {
+				if ((upcoming[draw] == 0 || upcoming > object[loopTwo].date) && used != 1) {
+					upcoming[draw] = object[loopTwo].date;
+					upcomingID[draw] = loopTwo;
+					used = 1;
+				}
+			}
 				
 		}
 			
-	}			
+	}
+
+	for(draw = 1; draw < 6; draw+=1) {
+		if (upcoming[draw] != 0) {
+			if (draw == 1) {
+					
+				document.getElementById("event").innerHTML = object[upcomingID[draw]].name + ":   " + object[upcomingID[draw]].target;
+				document.getElementById("countdown").innerHTML = daysStored[upcomingID[draw]] + " days, " + hoursStored[upcomingID[draw]] + " hours, " + minutesStored[upcomingID[draw]] + " minutes, " + secondsStored[upcomingID[draw]] + " seconds " + " Until my Event!!!";
+				document.getElementById("description").innerHTML = object[upcomingID[draw]].description;
+					
+			}
+			else {
+					
+				if (distanceStored[upcomingID[draw]] < 0) {
+					// When the Countdown is Over.
+					console.log(upcomingID[draw]);
+					
+					divStored[upcomingID[draw]] = document.createElement("div");
+					divStored[upcomingID[draw]].className = "link";
+					divStored[upcomingID[draw]].id = Number(1000 + upcomingID[draw]);
+					document.getElementById("upcoming").appendChild(divStored[upcomingID[draw]]);
+					
+					dateStored[upcomingID[draw]] = document.createElement("button");
+					dateStored[upcomingID[draw]].className = "bottom-button";
+					dateContent[upcomingID[draw]] = document.createTextNode("EXPIRED");
+					dateStored[upcomingID[draw]].appendChild(dateContent[upcomingID[draw]]);
+					document.getElementById(Number(1000 + upcomingID[draw])).appendChild(dateStored[upcomingID[draw]]);
+					
+					nameStored[upcomingID[draw]] = document.createElement("div");
+					nameStored[upcomingID[draw]].className = "bottom-text";
+					nameContent[upcomingID[draw]] = document.createTextNode(object[upcomingID[draw]].name + ":   " + object[upcomingID[draw]].target);
+					nameStored[upcomingID[draw]].appendChild(nameContent[upcomingID[draw]]);
+					document.getElementById(Number(1000 + upcomingID[draw])).appendChild(nameStored[upcomingID[draw]]);
+						
+					imageStored[upcomingID[draw]] = document.createElement("img");
+					imageStored[upcomingID[draw]].className = "bottom-background";
+					imageStored[upcomingID[draw]].setAttribute('src', 'images/1_Croatia.jpg');
+					document.getElementById(Number(1000 + upcomingID[draw])).appendChild(imageStored[upcomingID[draw]]);
+					
+					localStorage.removeItem(upcomingID[draw]);
+				}
+				else {
+					// Countdown is still going.
+					console.log(upcomingID[draw]);
+						
+					divStored[upcomingID[draw]] = document.createElement("div");
+					divStored[upcomingID[draw]].className = "link";
+					divStored[upcomingID[draw]].id = Number(1000 + upcomingID[draw]);
+					document.getElementById("upcoming").appendChild(divStored[upcomingID[draw]]);
+					
+					dateStored[upcomingID[draw]] = document.createElement("button");
+					dateStored[upcomingID[draw]].className = "bottom-button";
+					dateContent[upcomingID[draw]] = document.createTextNode(daysStored[upcomingID[draw]] + " Days");
+					dateStored[upcomingID[draw]].appendChild(dateContent[upcomingID[draw]]);
+					document.getElementById(Number(1000 + upcomingID[draw])).appendChild(dateStored[upcomingID[draw]]);				
+					
+					nameStored[upcomingID[draw]] = document.createElement("div");
+					nameStored[upcomingID[draw]].className = "bottom-text";
+					nameContent[upcomingID[draw]] = document.createTextNode(object[upcomingID[draw]].name + ":   " + object[upcomingID[draw]].target);
+					nameStored[upcomingID[draw]].appendChild(nameContent[upcomingID[draw]]);
+					document.getElementById(Number(1000 + upcomingID[draw])).appendChild(nameStored[upcomingID[draw]]);
+				
+					imageStored[upcomingID[draw]] = document.createElement("img");
+					imageStored[upcomingID[draw]].className = "bottom-background";
+					imageStored[upcomingID[draw]].setAttribute('src', 'images/1_Croatia.jpg');
+					document.getElementById(Number(1000 + upcomingID[draw])).appendChild(imageStored[upcomingID[draw]]);	
+				}
+			}
+		}
+	}
 	
 }
 
 
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Countdown()
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 function Countdown() {
 	
     start = setInterval(function() {
 		console.log("Countdown");	
+		
 		
 		// Get todays date and time.
 		now = new Date().getTime();
@@ -298,6 +401,7 @@ function Countdown() {
 			upcoming.push(0);
 			upcomingID.push(0);			
 		}
+		
 		
 		// Clears HTML Element.
 		document.getElementById("stored").innerHTML = " ";
