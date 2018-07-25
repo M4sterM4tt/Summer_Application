@@ -1,0 +1,59 @@
+				
+				<div class="link">
+				
+					<button class="bottom-button" onclick='window.location = "#pageone"'>14 Days</button>
+					<div class="bottom-text" id="link">Croatia: 20th June 2018</div>
+					<img class="bottom-background" src="images/1_Croatia.jpg"></img>
+				
+				</div>
+				
+				<div class="link">
+				
+					<button class="bottom-button" onclick='window.location = "#pageone"'>66 Days</button>
+					<div class="bottom-text" id="link">San Sebastian: 8th Sept 2018</div>
+					<img class="bottom-background" src="images/2_San_Sebastian.jpg"></img>
+				
+				</div>
+				
+				<div class="link">
+				
+					<button class="bottom-button" onclick='window.location = "#pageone"'>82 Days</button>
+					<div class="bottom-text" id="link">Matt's 21st Birthday: 3rd Oct 2018</div>
+					<img class="bottom-background" src="images/3_Matt's_Birthday.jpg"></img>
+				
+				</div>
+				
+				<div class="link">
+				
+					<button class="bottom-button" onclick='window.location = "#pageone"'>108 Days</button>
+					<div class="bottom-text" id="link">Peru: 1st May 2019</div>
+					<img class="bottom-background" src="images/4_Peru.jpg"></img>
+				
+				</div>
+				
+				
+				
+				
+								<div class="link">
+				
+					<button class="bottom-button" onclick='window.location = "#pageone"' >66 Days</button>
+					<div class="bottom-text" id="link">San Sebastian: 8th Sept 2018</div>
+					<img class="bottom-background" src="images/2_San_Sebastian.jpg"></img>
+				
+				</div>
+				
+				<div class="link">
+				
+					<button class="bottom-button" onclick='window.location = "#pageone"' >82 Days</button>
+					<div class="bottom-text" id="link">Matt's 21st Birthday: 3rd Oct 2018</div>
+					<img class="bottom-background" src="images/3_Matt's_Birthday.jpg"></img>
+				
+				</div>
+				
+				<div class="link">
+				
+					<button class="bottom-button" onclick='window.location = "#pageone"' >108 Days</button>
+					<div class="bottom-text" id="link">Peru: 1st May 2019</div>
+					<img class="bottom-background" src="images/4_Peru.jpg"></img>
+				
+				</div>

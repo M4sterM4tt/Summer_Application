@@ -43,12 +43,13 @@ var loopFour;
 var loopFive;
 var object;
 var objectTwo;
-
-
+var upcoming;
+var upcomingID;
+var used;
 
 
 window.onload = function() {
-	window.location = "#pagetwo";
+	//window.location = "#pagetwo";
 	
 	// Format Time.
 	now = new Date();
@@ -205,6 +206,7 @@ function startCountdown() {
 	// Get todays date and time.
 	now = new Date().getTime();
 	
+	
 	for	(loopTwo = 1; loopTwo < 1000; loopTwo+=1) {
 				
 		text = localStorage.getItem(loopTwo);
@@ -290,11 +292,20 @@ function Countdown() {
 		
 		// Get todays date and time.
 		now = new Date().getTime();
-
+		upcoming = [0];
+		upcomingID = [0];
+		for(draw = 1; draw < 6; draw+=1) {
+			upcoming.push(0);
+			upcomingID.push(0);			
+		}
 		
 		// Clears HTML Element.
-		document.getElementById("stored").innerHTML = "";
-		
+		document.getElementById("stored").innerHTML = " ";
+		document.getElementById("upcoming").innerHTML = " ";
+		document.getElementById("event").innerHTML = " ";
+		document.getElementById("countdown").innerHTML = " ";
+		document.getElementById("description").innerHTML = " ";
+					
 		// Creates a loop.
 		for(loopThree = 1; loopThree < 1000; loopThree+=1) {
 			
@@ -366,9 +377,89 @@ function Countdown() {
 					document.getElementById(loopThree).appendChild(imageStored[loopThree]);
 						
 				}
+				
+				used = 0;
+				for(draw = 1; draw < 6; draw+=1) {
+					if ((upcoming[draw] == 0 || upcoming > objectTwo[loopThree].date) && used != 1) {
+						upcoming[draw] = objectTwo[loopThree].date;
+						upcomingID[draw] = loopThree;
+						used = 1;
+					}
+				}
+				
+			}
 			
-			}	
-		}	
+		}
+		
+		
+		for(draw = 1; draw < 6; draw+=1) {
+			if (upcoming[draw] != 0) {
+				if (draw == 1) {
+					
+					document.getElementById("event").innerHTML = objectTwo[upcomingID[draw]].name + ":   " + objectTwo[upcomingID[draw]].target;
+					document.getElementById("countdown").innerHTML = daysStored[upcomingID[draw]] + " days, " + hoursStored[upcomingID[draw]] + " hours, " + minutesStored[upcomingID[draw]] + " minutes, " + secondsStored[upcomingID[draw]] + " seconds " + " Until my Event!!!";
+					document.getElementById("description").innerHTML = objectTwo[upcomingID[draw]].description;
+					
+				}
+				else {
+					
+					if (distanceStored[upcomingID[draw]] < 0) {
+						// When the Countdown is Over.
+						
+						divStored[upcomingID[draw]] = document.createElement("div");
+						divStored[upcomingID[draw]].className = "link";
+						divStored[upcomingID[draw]].id = Number(1000 + upcomingID[draw]);
+						document.getElementById("upcoming").appendChild(divStored[upcomingID[draw]]);
+						
+						dateStored[upcomingID[draw]] = document.createElement("button");
+						dateStored[upcomingID[draw]].className = "bottom-button";
+						dateContent[upcomingID[draw]] = document.createTextNode("EXPIRED");
+						dateStored[upcomingID[draw]].appendChild(dateContent[upcomingID[draw]]);
+						document.getElementById(Number(1000 + upcomingID[draw])).appendChild(dateStored[upcomingID[draw]]);
+						
+						nameStored[upcomingID[draw]] = document.createElement("div");
+						nameStored[upcomingID[draw]].className = "bottom-text";
+						nameContent[upcomingID[draw]] = document.createTextNode(objectTwo[upcomingID[draw]].name + ":   " + objectTwo[upcomingID[draw]].target);
+						nameStored[upcomingID[draw]].appendChild(nameContent[upcomingID[draw]]);
+						document.getElementById(Number(1000 + upcomingID[draw])).appendChild(nameStored[upcomingID[draw]]);
+						
+						imageStored[upcomingID[draw]] = document.createElement("img");
+						imageStored[upcomingID[draw]].className = "bottom-background";
+						imageStored[upcomingID[draw]].setAttribute('src', 'images/1_Croatia.jpg');
+						document.getElementById(Number(1000 + upcomingID[draw])).appendChild(imageStored[upcomingID[draw]]);
+						
+						localStorage.removeItem(upcomingID[draw]);
+					}
+					else {
+						// Countdown is still going.
+						console.log(upcomingID[draw]);
+						
+						divStored[upcomingID[draw]] = document.createElement("div");
+						divStored[upcomingID[draw]].className = "link";
+						divStored[upcomingID[draw]].id = Number(1000 + upcomingID[draw]);
+						document.getElementById("upcoming").appendChild(divStored[upcomingID[draw]]);
+						
+						dateStored[upcomingID[draw]] = document.createElement("button");
+						dateStored[upcomingID[draw]].className = "bottom-button";
+						dateContent[upcomingID[draw]] = document.createTextNode(daysStored[upcomingID[draw]] + " Days");
+						dateStored[upcomingID[draw]].appendChild(dateContent[upcomingID[draw]]);
+						document.getElementById(Number(1000 + upcomingID[draw])).appendChild(dateStored[upcomingID[draw]]);				
+						
+						nameStored[upcomingID[draw]] = document.createElement("div");
+						nameStored[upcomingID[draw]].className = "bottom-text";
+						nameContent[upcomingID[draw]] = document.createTextNode(objectTwo[upcomingID[draw]].name + ":   " + objectTwo[upcomingID[draw]].target);
+						nameStored[upcomingID[draw]].appendChild(nameContent[upcomingID[draw]]);
+						document.getElementById(Number(1000 + upcomingID[draw])).appendChild(nameStored[upcomingID[draw]]);
+						
+						imageStored[upcomingID[draw]] = document.createElement("img");
+						imageStored[upcomingID[draw]].className = "bottom-background";
+						imageStored[upcomingID[draw]].setAttribute('src', 'images/1_Croatia.jpg');
+						document.getElementById(Number(1000 + upcomingID[draw])).appendChild(imageStored[upcomingID[draw]]);	
+					}
+				}
+			}
+		}
+		
 		
 	}, 1000);
 
