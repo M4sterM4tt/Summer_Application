@@ -14,6 +14,11 @@ function menuThree() {
     document.getElementById("menuThree").classList.toggle("show");
 }
 
+
+function menuFour() {
+    document.getElementById("menuFour").classList.toggle("show");
+}
+
 window.onclick = function(event) {
 	
 	if (!event.target.matches('.fa')) {

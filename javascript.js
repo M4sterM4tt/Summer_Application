@@ -46,10 +46,12 @@ var objectTwo;
 var upcoming;
 var upcomingID;
 var used;
+var choice;
 
 
 window.onload = function() {
-	//window.location = "#pagetwo";
+	window.location = "#pageone";
+	choice = 0;
 	
 	// Format Time.
 	now = new Date();
@@ -250,7 +252,10 @@ function startCountdown() {
 				dateContent[loopTwo] = document.createTextNode("EXPIRED");
 				dateStored[loopTwo].appendChild(dateContent[loopTwo]);
 				document.getElementById(loopTwo).appendChild(dateStored[loopTwo]);
-				document.getElementById(loopTwo).onclick = function() {window.location = "#pageone";};		
+				document.getElementById(loopTwo).onclick = function() {
+					choice = loopTwo;
+					Unique();
+				};		
 				
 				nameStored[loopTwo] = document.createElement("div");
 				nameStored[loopTwo].className = " bottom-text";
@@ -278,7 +283,10 @@ function startCountdown() {
 				dateContent[loopTwo] = document.createTextNode(daysStored[loopTwo] + " Days");
 				dateStored[loopTwo].appendChild(dateContent[loopTwo]);
 				document.getElementById(loopTwo).appendChild(dateStored[loopTwo]);
-				document.getElementById(loopTwo).onclick = function() {window.location = "#pageone";};					
+				document.getElementById(loopTwo).onclick = function() {
+					choice = loopTwo;
+					Unique();
+				};					
 				
 				nameStored[loopTwo] = document.createElement("div");
 				nameStored[loopTwo].className = "bottom-text";
@@ -338,9 +346,13 @@ function startCountdown() {
 					
 					dateStored[upcomingID[draw]] = document.createElement("button");
 					dateStored[upcomingID[draw]].className = "bottom-button";
+					dateStored[upcomingID[draw]].id = upcomingID[draw] + 2000;
 					dateContent[upcomingID[draw]] = document.createTextNode("EXPIRED");
 					dateStored[upcomingID[draw]].appendChild(dateContent[upcomingID[draw]]);
 					document.getElementById(Number(1000 + upcomingID[draw])).appendChild(dateStored[upcomingID[draw]]);
+					document.getElementById(upcomingID[draw] + 2000).onclick = function() {
+						Unique(this.id);
+					};
 					
 					nameStored[upcomingID[draw]] = document.createElement("div");
 					nameStored[upcomingID[draw]].className = "bottom-text";
@@ -366,9 +378,13 @@ function startCountdown() {
 					
 					dateStored[upcomingID[draw]] = document.createElement("button");
 					dateStored[upcomingID[draw]].className = "bottom-button";
+					dateStored[upcomingID[draw]].id = upcomingID[draw] + 2000;
 					dateContent[upcomingID[draw]] = document.createTextNode(daysStored[upcomingID[draw]] + " Days");
 					dateStored[upcomingID[draw]].appendChild(dateContent[upcomingID[draw]]);
 					document.getElementById(Number(1000 + upcomingID[draw])).appendChild(dateStored[upcomingID[draw]]);					
+					document.getElementById(upcomingID[draw] + 2000).onclick = function() {
+						Unique(this.id);
+					};
 					
 					nameStored[upcomingID[draw]] = document.createElement("div");
 					nameStored[upcomingID[draw]].className = "bottom-text";
@@ -451,10 +467,13 @@ function Countdown() {
 					
 					dateStored[loopThree] = document.createElement("button");
 					dateStored[loopThree].className = "bottom-button";
+					dateStored[loopThree].id = loopThree + 2000;
 					dateContent[loopThree] = document.createTextNode("EXPIRED");
 					dateStored[loopThree].appendChild(dateContent[loopThree]);
 					document.getElementById(loopThree).appendChild(dateStored[loopThree]);
-					document.getElementById(loopThree).onclick = function() {window.location = "#pageone";};
+					document.getElementById(loopThree + 2000).onclick = function() {
+						Unique(this.id);
+					};
 					
 					nameStored[loopThree] = document.createElement("div");
 					nameStored[loopThree].className = "bottom-text";
@@ -479,10 +498,13 @@ function Countdown() {
 					
 					dateStored[loopThree] = document.createElement("button");
 					dateStored[loopThree].className = "bottom-button";
+					dateStored[loopThree].id = loopThree + 2000;
 					dateContent[loopThree] = document.createTextNode(daysStored[loopThree] + " Days");
 					dateStored[loopThree].appendChild(dateContent[loopThree]);
 					document.getElementById(loopThree).appendChild(dateStored[loopThree]);				
-					document.getElementById(loopThree).onclick = function() {window.location = "#pageone";};
+					document.getElementById(loopThree + 2000).onclick = function() {
+						Unique(this.id);
+					};
 					
 					nameStored[loopThree] = document.createElement("div");
 					nameStored[loopThree].className = "bottom-text";
@@ -542,9 +564,13 @@ function Countdown() {
 						
 						dateStored[upcomingID[draw]] = document.createElement("button");
 						dateStored[upcomingID[draw]].className = "bottom-button";
+						dateStored[upcomingID[draw]].id = upcomingID[draw] + 2000;
 						dateContent[upcomingID[draw]] = document.createTextNode("EXPIRED");
 						dateStored[upcomingID[draw]].appendChild(dateContent[upcomingID[draw]]);
 						document.getElementById(Number(1000 + upcomingID[draw])).appendChild(dateStored[upcomingID[draw]]);
+						document.getElementById(upcomingID[draw] + 2000).onclick = function() {
+							Unique(this.id);
+						};
 						
 						nameStored[upcomingID[draw]] = document.createElement("div");
 						nameStored[upcomingID[draw]].className = "bottom-text";
@@ -570,9 +596,13 @@ function Countdown() {
 						
 						dateStored[upcomingID[draw]] = document.createElement("button");
 						dateStored[upcomingID[draw]].className = "bottom-button";
+						dateStored[upcomingID[draw]].id = upcomingID[draw] + 2000;
 						dateContent[upcomingID[draw]] = document.createTextNode(daysStored[upcomingID[draw]] + " Days");
 						dateStored[upcomingID[draw]].appendChild(dateContent[upcomingID[draw]]);
 						document.getElementById(Number(1000 + upcomingID[draw])).appendChild(dateStored[upcomingID[draw]]);						
+						document.getElementById(upcomingID[draw] + 2000).onclick = function() {
+							Unique(this.id);
+						};
 						
 						nameStored[upcomingID[draw]] = document.createElement("div");
 						nameStored[upcomingID[draw]].className = "bottom-text";
@@ -589,8 +619,29 @@ function Countdown() {
 			}
 		}
 		
-		
+	choice	
 	}, 1000);
 
 }
 
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Unique()
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+function Unique(clicked_id) {
+	window.location = "#pagefour";
+	
+	console.log("Unique");
+	document.getElementById("eventUnique").innerHTML = objectTwo[Number(clicked_id - 2000)].name + ":   " + objectTwo[Number(clicked_id - 2000)].target;
+	document.getElementById("countdownUnique").innerHTML = daysStored[Number(clicked_id - 2000)] + " days, " + hoursStored[Number(clicked_id - 2000)] + " hours, " + minutesStored[Number(clicked_id - 2000)] + " minutes, " + secondsStored[Number(clicked_id - 2000)] + " seconds Until my Event!!!";
+	document.getElementById("descriptionUnique").innerHTML = objectTwo[Number(clicked_id - 2000)].description;
+
+}
