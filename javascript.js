@@ -116,8 +116,8 @@ function Process() {
 	description = descriptionInput.value;
 	targetTime = timeInput.value;
 	targetDate = new Date(dateInput.value);
-	targetCountdown = targetDate.toString("MMMM dd yyyy") + " " + targetTime.toString("HH:mm");
-	targetDisplay = targetTime.toString("HH:mm") + " " + targetDate.toString("dddd MMMM yyyy") + " ";
+	targetCountdown = targetDate.toString("MM dd yyyy") + " " + targetTime.toString("HH:mm");
+	targetDisplay = targetTime.toString("HH:mm") + " " + targetDate.toString("dddd MM MMMM yyyy") + " ";
 	date = new Date(targetCountdown).getTime();
 	
 	found = false;
