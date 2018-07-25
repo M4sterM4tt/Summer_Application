@@ -37,8 +37,8 @@
 					<button class="fa fa-bars" onclick="menuOne();"></button>
 					<div id="menuOne" class="dropdown-content">
 						<button onclick='window.location = "#pageone" ;'>Upcoming</button>
-						<button onclick='window.location = "#pagetwo" ;'>List Event</button>
-						<button onclick='window.location = "#pagethree" ;'>Change Event</button>
+						<button onclick='window.location = "#pagetwo" ;'>Event List</button>
+						<button onclick='window.location = "#pagethree" ;'>Add Event</button>
 					</div>
 				</div>
 				
@@ -89,8 +89,8 @@
 					<button class="fa fa-bars" onclick="menuTwo();"></button>
 					<div id="menuTwo" class="dropdown-content">
 						<button onclick='window.location = "#pageone" ;'>Upcoming</button>
-						<button onclick='window.location = "#pagetwo" ;'>List Event</button>
-						<button onclick='window.location = "#pagethree" ;'>Change Event</button>
+						<button onclick='window.location = "#pagetwo" ;'>Event List</button>
+						<button onclick='window.location = "#pagethree" ;'>Add Event</button>
 					</div>
 				</div>
 				
@@ -120,8 +120,8 @@
 					<button class="fa fa-bars" onclick="menuThree();"></button>
 					<div id="menuThree" class="dropdown-content">
 						<button onclick='window.location = "#pageone" ;'>Upcoming</button>
-						<button onclick='window.location = "#pagetwo" ;'>List Event</button>
-						<button onclick='window.location = "#pagethree" ;'>Change Event</button>
+						<button onclick='window.location = "#pagetwo" ;'>Event List</button>
+						<button onclick='window.location = "#pagethree" ;'>Add Event</button>
 					</div>
 				</div>
 				
@@ -159,13 +159,19 @@
 					<button class="fa fa-bars" onclick="menuFour();"></button>
 					<div id="menuFour" class="dropdown-content">
 						<button onclick='window.location = "#pageone" ;'>Upcoming</button>
-						<button onclick='window.location = "#pagetwo" ;'>List Event</button>
-						<button onclick='window.location = "#pagethree" ;'>Change Event</button>
+						<button onclick='window.location = "#pagetwo" ;'>Event List</button>
+						<button onclick='window.location = "#pagethree" ;'>Add Event</button>
 					</div>
 				</div>
 				
 				
-				<i class="fa fa-cog" onclick="Settings();"></i>
+				<div class="menu-dropdown">
+					<button class="fa fa-cog" onclick="settingFour();"></button>
+					<div id="settingFour" class="dropdown-content">
+						<button onclick='window.location = "#pageone" ;'>Update Event</button>
+						<button onclick='localStorage.removeItem(choice);window.location = "#pagetwo";'>Delete Event</button>
+					</div>
+				</div>
 				
 			</div>
 			

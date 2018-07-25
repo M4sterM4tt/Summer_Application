@@ -98,65 +98,10 @@ window.onload = function() {
 		
 	}
 	
-
-	// Premade Events
-	Premade();
 	
 	// Creating Events
 	document.addEventListener("deviceready", startCountdown, false);	
 	Countdown();
-	
-}
-
-
-
-
-function Premade() {
-	
-	console.log("Premade");
-	
-	// Get todays date and time.
-	now = new Date().getTime();
-	
-	
-	// Croatia.
-	countdownStorage[1] = 1;
-	found = { "id":1, "name":"Croatia", "description":"I am really excited about getting drunk, everyday, all day. Gonna make some sandcastles on the beach.", "target":"08:00 Wednesday June 20th 2018 ", "date":1529478000000 }
-	countdownJSON = JSON.stringify(found);
-	localStorage.setItem(1, countdownJSON);
-	text = localStorage.getItem(1);
-	object[1] = JSON.parse(text);
-	console.log(object[1]);		
-
-	
-	// Slovenia.
-	countdownStorage[2] = 2;
-	found = { "id":2, "name":"Slovenia", "description":"Explore the Country", "target":"08:00 Tuesday September 4th 2018 ", "date":1536044400000 }
-	countdownJSON = JSON.stringify(found);
-	localStorage.setItem(2, countdownJSON);
-	text = localStorage.getItem(2);
-	object[2] = JSON.parse(text);
-	console.log(object[2]);
-
-	
-	// Matt's 21st.
-	countdownStorage[3] = 3;
-	found = { "id":3, "name":"Matt's 21st Birthday", "description":"This must be a Joke", "target":"08:00 Wednesday October 3rd 2018 ", "date":1538550000000 }
-	countdownJSON = JSON.stringify(found);
-	localStorage.setItem(3, countdownJSON);
-	text = localStorage.getItem(3);
-	object[3] = JSON.parse(text);
-	console.log(object[3]);
-
-	
-	// Peru.
-	countdownStorage[4] = 4;
-	found = { "id":4, "name":"Peru", "description":"Horray for Freedom", "target":"08:00 Wednesday 1st May 2019 ", "date":1556694000000 }
-	countdownJSON = JSON.stringify(found);
-	localStorage.setItem(4, countdownJSON);
-	text = localStorage.getItem(4);
-	object[4] = JSON.parse(text);
-	console.log(object[4]);	
 	
 }
 
@@ -638,10 +583,19 @@ function Countdown() {
 
 function Unique(clicked_id) {
 	window.location = "#pagefour";
-	
 	console.log("Unique");
-	document.getElementById("eventUnique").innerHTML = objectTwo[Number(clicked_id - 2000)].name + ":   " + objectTwo[Number(clicked_id - 2000)].target;
-	document.getElementById("countdownUnique").innerHTML = daysStored[Number(clicked_id - 2000)] + " days, " + hoursStored[Number(clicked_id - 2000)] + " hours, " + minutesStored[Number(clicked_id - 2000)] + " minutes, " + secondsStored[Number(clicked_id - 2000)] + " seconds Until my Event!!!";
-	document.getElementById("descriptionUnique").innerHTML = objectTwo[Number(clicked_id - 2000)].description;
-
+	choice = Number(clicked_id - 2000)
+	
+	startTwo = setInterval(function() {
+		
+		if (objectTwo[choice] != 0 && objectTwo[choice] != null) {
+			
+			document.getElementById("eventUnique").innerHTML = objectTwo[choice].name + ":   " + objectTwo[choice].target;
+			document.getElementById("countdownUnique").innerHTML = daysStored[choice] + " days, " + hoursStored[choice] + " hours, " + minutesStored[choice] + " minutes, " + secondsStored[choice] + " seconds Until my Event!!!";
+			document.getElementById("descriptionUnique").innerHTML = objectTwo[choice].description;
+			
+		}
+		
+	}, 1000);
+	
 }

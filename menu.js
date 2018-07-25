@@ -19,6 +19,12 @@ function menuFour() {
     document.getElementById("menuFour").classList.toggle("show");
 }
 
+
+function settingFour() {
+    document.getElementById("settingFour").classList.toggle("show");
+}
+
+
 window.onclick = function(event) {
 	
 	if (!event.target.matches('.fa')) {
