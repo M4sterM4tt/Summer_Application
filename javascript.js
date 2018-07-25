@@ -295,11 +295,21 @@ function startCountdown() {
 			
 			used = 0;
 			for(draw = 1; draw < 6; draw+=1) {
-				if ((upcoming[draw] == 0 || upcoming > object[loopTwo].date) && used != 1) {
+					
+				if ((upcoming[draw] == 0 || upcoming[draw] > object[loopTwo].date) && used != 1) {
+						
+					for(drawTwo = 5; drawTwo > draw; drawTwo-=1) {
+							
+						upcoming[drawTwo] = upcoming[drawTwo - 1];
+						upcomingID[drawTwo] = upcomingID[drawTwo - 1];
+						
+					}
 					upcoming[draw] = object[loopTwo].date;
-					upcomingID[draw] = loopTwo;
+					upcomingID[draw] = loopThree;
 					used = 1;
+						
 				}
+					
 			}
 				
 		}
@@ -397,6 +407,7 @@ function Countdown() {
 		
 		// Get todays date and time.
 		now = new Date().getTime();
+		
 		upcoming = [0];
 		upcomingID = [0];
 		for(draw = 1; draw < 6; draw+=1) {
@@ -488,11 +499,21 @@ function Countdown() {
 				
 				used = 0;
 				for(draw = 1; draw < 6; draw+=1) {
-					if ((upcoming[draw] == 0 || upcoming > objectTwo[loopThree].date) && used != 1) {
+					
+					if ((upcoming[draw] == 0 || upcoming[draw] > objectTwo[loopThree].date) && used != 1) {
+						
+						for(drawTwo = 5; drawTwo > draw; drawTwo-=1) {
+							
+							upcoming[drawTwo] = upcoming[drawTwo - 1];
+							upcomingID[drawTwo] = upcomingID[drawTwo - 1];
+						
+						}
 						upcoming[draw] = objectTwo[loopThree].date;
 						upcomingID[draw] = loopThree;
 						used = 1;
+						
 					}
+					
 				}
 				
 			}
